@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Computer Vision</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+<script src="webcam.js"></script>
+<script src="rps-dataset.js"></script>
+<script type="text/javascript" src="utility.js"></script>
+<link href="decoration.css" rel="stylesheet" type="text/css">
+
+  </head>
+
+  <body>
+
+    <header>
+      
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="/" class="navbar-brand d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <strong>Computer Vision</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Train your Machine learning model right in your browser!</h1>
+          <p class="lead text-black">
+            <h3><b>Trainable Image Classifier</b></h3>
+            <p>
+          Hello! folks this is an in browser classifier which let you train your images and even download your trainred model. First of all you have to choose number of classes and then start cam followed by clicking the class button to click your sample images then stop the camera. Repeat the same for all the classes. Then click on Train button and you will be notified when training is complete.Then click on predict now for preparing the camera. Finally click on start predicting for real time prediction.</p></p>
+          <p>
+            <a href="#" class="btn btn-primary my-2">Follow me on GitHub</a>
+            <a href="#" class="btn btn-secondary my-2">Linkedin</a>
+          </p>
+        </div>
+      </section>
+      <div class="slider">
+<div id="we">
+  <div id="x">
+  <a href="#slide-0">0</a>
+  <a href="#slide-1">1</a>
+  </div>
+
+  <div class="slides" id="z">
+    <div id="slide-0">
+    <div>
+      <video class="my_class_name" autoplay playsinline muted id="0cc" width="224" height="224"></video>
+    </div>
+  <br>
+  <div style="display: block;" id="0b">
+  <button class="button" id="0" onclick="handleButton(this)" >Class 0</button>
+  <br>
+  <p id="00">Class 0 count:</p>
+  <button class="button" id="0t" onclick="stpcm(this)">Stop cam</button>
+  <br>
+  <button class="button" id="0c" onclick="strcm(this)">start cam</button>
+  </div>
+  </div>
+    <div id="slide-1">
+    <div>
+      <video class="my_class_name" autoplay playsinline muted id="1cc" width="224" height="224"></video>
+    </div>
+  <br>
+  <div style="display: block;" id="1b">
+  <button class="button" id="1" onclick="handleButton(this)" >Class 1</button>
+  <br>
+  <p id="11">Class 1 count:</p>
+  <button class="button" id="1t" onclick="stpcm(this)" >Stop cam</button>
+  <br>
+  <button class="button" id="1c" onclick="strcm(this)">start cam</button>
+  </div>
+  </div>
+</div>
+<br>
+  <button type="button" class="btn btn-primary" onclick="crtcard()">Add More Classes</button>
+  <button type="button" class="btn btn-primary"
+   id="train" onclick="doTraining()" >Train Network</button>
+   <button type="button" class="btn btn-primary" onclick="init()">Predict Now</button>
+  <div id="dummy">You will be notified when training is complete</div>
+  </div>
+<div id="we1">
+  <p>Now let's start predicting</p>
+  <div>
+      <video class="my_class_name" autoplay playsinline muted id="wc" width="224" height="224"></video>
+    </div>
+    <button type="button" class="btn btn-primary" id="9c" onclick="startPredicting()" >Start Predicting</button>
+    <button type="button" class="btn btn-primary" id="9t" onclick="stopPredicting()" >Stop Predicting</button>
+    <br>
+    <br>
+    <button type="button" class="btn btn-primary" id="downloadmodel" onclick="dwnld()">Save model</button>
+    <br>
+    <div id="prediction"></div>
+</div>
+  </body>
+  <script src="index.js"></script>
+  </html>
